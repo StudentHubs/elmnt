@@ -6,9 +6,12 @@
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
   "scripts": {
-    "prettier":
-      "prettier --single-quote --trailing-comma all --write \"{src,test}/**/*.{ts,tsx}\"",
+    "prettier": "prettier --write \"{src,test}/**/*.{ts,tsx}\"",
     "clean": "rimraf lib/*",
     "build": "yarn run clean && tsc",
     "test": "jest",
@@ -20,9 +23,17 @@
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleFileExtensions": ["ts", "tsx", "js"],
-    "setupFiles": ["./test/setup.ts"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "setupFiles": [
+      "./test/setup.ts"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "testEnvironment": "node"
   },
   "devDependencies": {
