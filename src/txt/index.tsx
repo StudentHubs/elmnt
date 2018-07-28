@@ -72,9 +72,7 @@ const base = (input?) =>
         }))
         .do(
           restyle(style => ({
-            outer: style
-              .filterKeys()
-              .filter(...css.groups.box, ...css.groups.other),
+            outer: style.filter(...css.groups.box, ...css.groups.other),
             inner: {
               padding: '1px 0px',
               display: 'block',
@@ -94,7 +92,7 @@ const base = (input?) =>
     )
     .do(
       restyle(style => ({
-        text: style.filterKeys().filter(...css.groups.text),
+        text: style.filter(...css.groups.text),
         placeholder: style.mergeKeys('placeholder').filter(...css.groups.text),
       })),
     );
